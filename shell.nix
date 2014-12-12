@@ -6,7 +6,7 @@ let
     libfaultEnv = stdenv.mkDerivation rec {
       name = "libfault-env";
       src  = ./.;
-      buildInputs = [ git xz clang perl ];
+      buildInputs = [ git xz clang perl gdb rr ];
     };
   };
 in env
