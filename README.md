@@ -8,7 +8,7 @@ providing robust, simple crash reporting with an easy-to-use API. It's
 originally based on code from [Phusion Passenger][phusion], with some
 extensions.
 
-[phusion]: See http://www.reddit.com/r/programming/comments/13vmik/redis_crashes_a_small_rant_about_software/c783lzx
+[phusion]: http://www.reddit.com/r/programming/comments/13vmik/redis_crashes_a_small_rant_about_software/c783lzx
 
 It does things like:
 
