@@ -2170,7 +2170,7 @@ libfault_install_handlers()
 /* -------------------------------------------------------------------------- */
 /* -- Shared library entry-point -------------------------------------------- */
 
-#if defined(LIBFAULT_SHARED_LIBRARY)
+#if defined(LIBFAULT_PRELOAD_SHARED_LIBRARY)
 
 __attribute__((constructor)) static void libfault_init_shlib()
 {
@@ -2178,7 +2178,7 @@ __attribute__((constructor)) static void libfault_init_shlib()
   libfault_install_handlers();
 }
 
-#endif /* !defined(LIBFAULT_SHARED_LIBRARY) */
+#endif /* !defined(LIBFAULT_PRELOAD_SHARED_LIBRARY) */
 
 // Local Variables:
 // fill-column: 80

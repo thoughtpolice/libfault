@@ -10,7 +10,7 @@ all: lib/libfault.so lib/libfaultpreload.so lib/libfault.a
 lib/libfault.so: lib/libfault.c
 	$(CC) $(CFLAGS) -fPIC -shared -o $@ $<
 lib/libfaultpreload.so: lib/libfault.c
-	$(CC) $(CFLAGS) -fPIC -DLIBFAULT_SHARED_LIBRARY -shared -o $@ $<
+	$(CC) $(CFLAGS) -fPIC -DLIBFAULT_PRELOAD_SHARED_LIBRARY -shared -o $@ $<
 lib/libfault.a: lib/libfault.o
 	ar -rc $@ $<
 	ranlib $@
