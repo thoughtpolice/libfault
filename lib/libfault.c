@@ -155,6 +155,8 @@
 /* -------------------------------------------------------------------------- */
 /* -- Macros, types, decls -------------------------------------------------- */
 
+#define LIBFAULT_UNUSED __attribute__((unused))
+
 typedef struct libfault_assert_info {
   const char* filename;
   const char* function; /* May be NULL. */
@@ -916,7 +918,7 @@ libfault_run_subprocess(libfault_handler_state* state,
 /* -- Message dumping code -------------------------------------------------- */
 
 static void
-libfault_dump_stack(libfault_handler_state* state, void* data)
+libfault_dump_stack(libfault_handler_state* state, void* data LIBFAULT_UNUSED)
 {
   char* messageBuf = state->msg_buffer;
   char* end;
@@ -968,7 +970,7 @@ libfault_dump_stack(libfault_handler_state* state, void* data)
 }
 
 static void
-libfault_dump_registers(libfault_handler_state* state, void* data)
+libfault_dump_registers(libfault_handler_state* state, void* data LIBFAULT_UNUSED)
 {
   char* messageBuf = state->msg_buffer;
   char* end;
@@ -1245,7 +1247,7 @@ libfault_dump_maps(libfault_handler_state* state)
 }
 
 static void
-libfault_dump_fds_with_lsof(libfault_handler_state* state, void* userData)
+libfault_dump_fds_with_lsof(libfault_handler_state* state, void* data LIBFAULT_UNUSED)
 {
   char* end;
 
@@ -1267,7 +1269,7 @@ libfault_dump_fds_with_lsof(libfault_handler_state* state, void* userData)
 }
 
 static void
-libfault_dump_fds_with_ls(libfault_handler_state* state, char* end)
+libfault_dump_fds_with_ls(libfault_handler_state* state, char* end LIBFAULT_UNUSED)
 {
   pid_t pid;
   int status;
@@ -1346,7 +1348,7 @@ libfault_dump_fds(libfault_handler_state* state)
  * know!)
  */
 static void
-libfault_dump_backtrace(libfault_handler_state* state, void* userData)
+libfault_dump_backtrace(libfault_handler_state* state, void* data LIBFAULT_UNUSED)
 {
   void* backtraceStore[512];
   int frames
@@ -1460,7 +1462,8 @@ libfault_install_custom_diagnostics(libfault_custom_diagnostics func,
 }
 
 static void
-libfault_run_custom_diagnostics(libfault_handler_state* state, void* data)
+libfault_run_custom_diagnostics(libfault_handler_state* state LIBFAULT_UNUSED,
+                                void* data LIBFAULT_UNUSED)
 {
   libfault_custom_diagnostics_dumper(libfault_custom_diagnostics_dumper_data);
 }
