@@ -35,6 +35,10 @@
 #ifndef _LIBFAULT_H_
 #define _LIBFAULT_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef void (*libfault_custom_diagnostics)(void* data);
 
 /**
@@ -135,5 +139,9 @@ void libfault_set_custom_diagnostics_data(void* data);
  * - Returns nothing.
  */
 void libfault_install_handlers();
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif /* !_LIBFAULT_H_ */
