@@ -61,7 +61,7 @@ void libfault_init(void);
  *
  * - Returns nothing.
  */
-void libfault_set_app_name(char* name);
+void libfault_set_app_name(const char* name);
 
 /**
  * libfault_set_app_version(version):
@@ -73,7 +73,7 @@ void libfault_set_app_name(char* name);
  *
  * - Returns nothing.
  */
-void libfault_set_app_version(char* version);
+void libfault_set_app_version(const char* version);
 
 /**
  * libfault_set_log_name(path):
@@ -87,7 +87,7 @@ void libfault_set_app_version(char* version);
  *
  * - Returns nothing.
  */
-void libfault_set_log_name(char* path);
+void libfault_set_log_name(const char* path);
 
 /**
  * libfault_set_bugreport_url(url):
@@ -100,7 +100,7 @@ void libfault_set_log_name(char* path);
  *
  * - Returns nothing.
  */
-void libfault_set_bugreport_url(char* url);
+void libfault_set_bugreport_url(const char* url);
 
 /**
  * libfault_set_custom_diagnostics(callback):
@@ -138,7 +138,7 @@ void libfault_set_custom_diagnostics_data(void* data);
  *
  * - Returns nothing.
  */
-void libfault_install_handlers();
+void libfault_install_handlers(void);
 
 #ifdef __cplusplus
 } // extern "C"

@@ -180,10 +180,10 @@ typedef struct libfault_ctx {
   int orig_argc;
   libfault_custom_diagnostics diagnostics;
   void* diagnostics_data;
-  char* app_name;
-  char* app_version;
-  char* log_name;
-  char* bugreport_url;
+  const char* app_name;
+  const char* app_version;
+  const char* log_name;
+  const char* bugreport_url;
 } libfault_ctx;
 
 static libfault_ctx libfault_main_ctx;
@@ -2025,7 +2025,7 @@ libfault_init(void)
  * - Returns nothing.
  */
 void
-libfault_set_app_name(char* name)
+libfault_set_app_name(const char* name)
 {
   libfault_main_ctx.app_name = name;
 }
@@ -2041,7 +2041,7 @@ libfault_set_app_name(char* name)
  * - Returns nothing.
  */
 void
-libfault_set_app_version(char* version)
+libfault_set_app_version(const char* version)
 {
   libfault_main_ctx.app_version = version;
 }
@@ -2059,7 +2059,7 @@ libfault_set_app_version(char* version)
  * - Returns nothing.
  */
 void
-libfault_set_log_name(char* path)
+libfault_set_log_name(const char* path)
 {
   libfault_main_ctx.log_name = path;
 }
@@ -2076,7 +2076,7 @@ libfault_set_log_name(char* path)
  * - Returns nothing.
  */
 void
-libfault_set_bugreport_url(char* url)
+libfault_set_bugreport_url(const char* url)
 {
   libfault_main_ctx.bugreport_url = url;
 }
@@ -2126,7 +2126,7 @@ libfault_set_custom_diagnostics_data(void* data)
  * - Returns nothing.
  */
 void
-libfault_install_handlers()
+libfault_install_handlers(void)
 {
   if (libfault_env_enabled("LIBFAULT_ABORT_HANDLER", true)) {
     libfault_beep_on_abort
