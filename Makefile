@@ -40,5 +40,6 @@ install: lib/libfault.so lib/libfault.a lib/libfaultpreload.so bin/libfault
 	install -Dm755 lib/libfault.so $(LIBDIR)/libfault.so
 	install -Dm755 lib/libfaultpreload.so $(LIBDIR)/libfaultpreload.so
 	install -Dm755 lib/libfault.h  $(INCDIR)/libfault.h
+	install -Dm755 lib/libfault++.h  $(INCDIR)/libfault++.h
 	perl -pi -e 's@LIBFAULT_BASEDIR=@LIBFAULT_BASEDIR=$(PREFIX)/lib@g' \
 	  $(BINDIR)/libfault
