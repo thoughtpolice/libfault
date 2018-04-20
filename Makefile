@@ -4,7 +4,7 @@ LIBDIR = $(DESTDIR)$(PREFIX)/lib
 INCDIR = $(DESTDIR)$(PREFIX)/include
 
 CC = $(shell echo $${CC:-cc})
-CFLAGS += -std=c11 -D_GNU_SOURCE -O2 -Wall
+CFLAGS += -std=c11 -D_GNU_SOURCE -O2 -Wall -Wextra
 
 all: lib/libfault.so lib/libfaultpreload.so lib/libfault.a
 lib/libfault.so: lib/libfault.c

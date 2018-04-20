@@ -28,6 +28,8 @@ f()
 int
 main(int ac, char** av)
 {
+  (void)ac, (void)av;
+
   f(); /* Go */
   return 0;
 }

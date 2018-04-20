@@ -29,6 +29,8 @@ f()
 int
 main(int ac, char** av)
 {
+  (void)ac, (void)av;
+
   libfault_init();
   libfault_set_app_name("Testing application #4");
   libfault_set_app_version("0.0");
